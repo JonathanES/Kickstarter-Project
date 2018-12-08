@@ -1,0 +1,19 @@
+{
+  "name": "kickstarter-project",
+  "version": "1.0.0",
+  "description": "Determine if a project is going to succeed or fail on kickstarte",
+  "main": "server.s",
+  "scripts": {
+    "test": "npm run test",
+    "frontend": "npm start --prefix frontend",
+    "backend": "npm start --prefix backend",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "author": "Jonathan ESPIARD",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^4.1.0",
+    "create-react-app": "^2.1.1",
+    "jsonexport": "^2.4.1"
+  }
+}
