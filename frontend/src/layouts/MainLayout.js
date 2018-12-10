@@ -3,7 +3,6 @@ import React from 'react';
 const MainLayout = ({ children }) => (
       <div
         style={{
-          backgroundColor: '#216288',
           textAlign: 'center',
           minHeight: '100vh',
           display: 'flex',

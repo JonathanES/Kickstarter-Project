@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import FormContext from '../contexts/FormContext';
-import '../public/Form.css';
+import DataContext from '../contexts/DataContext';
+import '../public/main.css';
 
 
-class LoginForm extends Component {
+class Form extends Component {
   state = {
     category: '',
     backers: 0,
@@ -12,15 +12,6 @@ class LoginForm extends Component {
     days_before_deadline: 0,
     countries: [],
     categories: []
-  };
-
-  async componentDidMount() {
-    let result = await fetch("/api/form/country");
-    let response = await result.json();
-    this.setState({ countries: response.data });
-    result = await fetch("/api/form/category");
-    response = await result.json();
-    this.setState({ categories: response.data });
   };
 
   onSubmit = (context) => {
@@ -70,20 +61,20 @@ class LoginForm extends Component {
   }
   render() {
     return (
-          <FormContext.Consumer>
+          <DataContext.Consumer>
             {context => (
-              <div>
-                <div class="form-style-9">
+              <div >
+                <div class="form-style-9" >
                   <ul>
                     <li>
                     <select class="field-style field-split align-left" placeholder="Category" name="category" id="category" value={this.state.value} onChange={this.handleChange}>
-                    {this.state.categories.map(elt =>
-                      <option value={elt} > {elt} </option>
+                    {context.categories.map(elt =>
+                      <option value={elt.category} > {elt.category} </option>
                     )}
                   </select>
                   <select class="field-style field-split align-right" name="country" id="country" placeholder="Countries" value={this.state.value} onChange={this.handleChange}>
-                    {this.state.countries.map(elt =>
-                      <option value={elt} > {elt} </option>
+                    {context.countries.map(elt =>
+                      <option value={elt.country} > {elt.country} </option>
                     )}
                   </select>
                     </li>
@@ -110,9 +101,9 @@ class LoginForm extends Component {
                 
               </div>
             )}
-          </FormContext.Consumer>
+          </DataContext.Consumer>
     )
   }
 }
 
-export default LoginForm;
+export default Form;

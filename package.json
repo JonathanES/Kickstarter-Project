@@ -14,6 +14,8 @@
   "dependencies": {
     "concurrently": "^4.1.0",
     "create-react-app": "^2.1.1",
-    "jsonexport": "^2.4.1"
+    "jsonexport": "^2.4.1",
+    "react": "^16.7.0-alpha.2",
+    "react-dom": "^16.7.0-alpha.2"
   }
 }
