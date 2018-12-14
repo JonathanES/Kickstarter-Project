@@ -4,7 +4,6 @@ import MainLayout from './layouts/MainLayout';
 import Menu from './components/Menu';
 import MenuContext, {formMenu, graphMenu} from './contexts/MenuContext';
 import Mic from './components/Mic';
-import Sizer from './components/test3';
 const Form = React.lazy(() => import('./components/Form'));
 const Graph = React.lazy(() => import('./components/Graph'));
 
@@ -48,7 +47,6 @@ class App extends Component {
           <Menu></Menu>
           <MainLayout>
           <Mic></Mic>             
-          <Sizer></Sizer>
         <React.Suspense fallback="Loading...">
           {
          this.state.categories && this.state.countries && this.state.graphMenu && <Graph></Graph>
