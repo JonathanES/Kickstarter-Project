@@ -16,8 +16,6 @@ class Form extends Component {
     country: '',
     usd_goal_real: "",
     days_before_deadline: "",
-    countries: [],
-    categories: [],
     recognition: null
   };
   this.handleClick = this.handleClick.bind(this);
@@ -110,34 +108,34 @@ async componentDidMount() {
       <DataContext.Consumer>
         {context => (
           <div >
-            <div class="form-style-9" >
+            <div className="form-style-9" >
               <ul>
                 <li>
-                  <select class="field-style field-split align-left" placeholder="Category" name="category" id="category" value={this.state.value} onChange={this.handleChange}>
+                  <select className="field-style field-split align-left" placeholder="Category" name="category" id="category" value={this.state.value} onChange={this.handleChange}>
                     {context.categories.map(elt =>
-                      <option value={elt.category} > {elt.category} </option>
+                      <option value={elt.category} key={elt.category}> {elt.category} </option>
                     )}
                   </select>
-                  <select class="field-style field-split align-right" name="country" id="country" placeholder="Countries" value={this.state.value} onChange={this.handleChange} onClick={this.handleClick}>
+                  <select className="field-style field-split align-right" name="country" id="country" placeholder="Countries" value={this.state.value} onChange={this.handleChange} onClick={this.handleClick}>
                     {context.countries.map(elt =>
-                      <option value={elt.country} > {elt.country} </option>
+                      <option value={elt.country} key={elt.country}> {elt.country} </option>
                     )}
                   </select>
                 </li>
                 <li>
-                  <input type="backers" class="field-style field-full align-none" placeholder="Backers" name="backers" id="backers" onChange={this.handleChange} onClick={this.handleClick} value={this.state.backers}/>
+                  <input type="backers" className="field-style field-full align-none" placeholder="Backers" name="backers" id="backers" onChange={this.handleChange} onClick={this.handleClick} value={this.state.backers}/>
                 </li>
                 <li>
-                  <input type="text" class="field-style field-full align-none" placeholder="Goals in USD" name="usd_goal_real" id="usd_goal_real" onChange={this.handleChange} onClick={this.handleClick} value={this.state.usd_goal_real}/>
+                  <input type="text" className="field-style field-full align-none" placeholder="Goals in USD" name="usd_goal_real" id="usd_goal_real" onChange={this.handleChange} onClick={this.handleClick} value={this.state.usd_goal_real}/>
                 </li>
                 <li>
-                  <input type="text" class="field-style field-full align-none" placeholder="Days before deadline" name="days_before_deadline" id="days_before_deadline" onChange={this.handleChange} onClick={this.handleClick} value={this.state.days_before_deadline}/>
+                  <input type="text" className="field-style field-full align-none" placeholder="Days before deadline" name="days_before_deadline" id="days_before_deadline" onChange={this.handleChange} onClick={this.handleClick} value={this.state.days_before_deadline}/>
                 </li>
                 <li>
                   <button
                     onClick={() => this.onSubmit(context)}
                     value="Submit"
-                    class="submit"
+                    className="submit"
                   >
                     Submit
       </button>
