@@ -10,7 +10,7 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      result: "",
+      result: {},
       countries: this.countries,
       categories: this.categories,
       onSubmit: this.onSubmit,
@@ -55,7 +55,7 @@ class App extends Component {
             </React.Suspense >
 
           {this.state.formMenu &&<label htmlFor={this.state.result} style={{ color: '#17445E' }}>
-          {this.state.result}
+          {JSON.stringify(this.state.result)}
         </label>}
         </MainLayout>
         </MenuContext.Provider>

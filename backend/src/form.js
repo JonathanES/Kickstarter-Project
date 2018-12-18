@@ -70,7 +70,10 @@ function post(req,res,next){
             let data = JSON.parse(body).Results.output1.value;
             res.status(200).json({
                 "message":"request successful",
-                data: data.Values[0][6]
+                data: {
+                    accuracy: data.Values[0][7],
+                    value: data.Values[0][6]
+                }
             });
         } else {
             console.log("The request failed with status code: " + res.statusCode);
