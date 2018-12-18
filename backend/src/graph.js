@@ -11,7 +11,7 @@ async function getStatsByCountry(req, res, next){
       });
     res.status(200).json({
         "message":"request successful",
-        data: arrays.countries.map(elt => {return {stat: parseFloat(Math.round(elt.stat * 100) / 100).toFixed(2), country: elt.country}})
+        data: arrays.countries.map(elt => {return {stat: parseFloat(Math.round(elt.stat * 100) / 100).toFixed(2), country: elt.country, totalNumber: elt.total}})
     });
 }
 
@@ -21,6 +21,6 @@ async function getStatsByCategory(req, res, next){
     });
     res.status(200).json({
         "message":"request successful",
-        data: arrays.categories.map(elt => {return {stat: parseFloat(Math.round(elt.stat * 100) / 100).toFixed(2), category: elt.category}})
+        data: arrays.categories.map(elt => {return {stat: parseFloat(Math.round(elt.stat * 100) / 100).toFixed(2), category: elt.category, totalNumber: elt.total}})
     });
 }
