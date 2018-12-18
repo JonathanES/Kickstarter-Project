@@ -21,6 +21,7 @@ class Form extends Component {
   this.handleClick = this.handleClick.bind(this);
 }
 async componentDidMount() {
+  console.log(this.props.context);
   const {SpeechRecognition} = await createSpeechRecognitionPonyfill({  region: 'westeurope',  subscriptionKey: key1});
   const recognition =  new SpeechRecognition();
   recognition.interimResults = true;
