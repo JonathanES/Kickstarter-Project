@@ -3,7 +3,6 @@ import DataContext from './contexts/DataContext';
 import MainLayout from './layouts/MainLayout';
 import Menu from './components/Menu';
 import MenuContext, {formMenu, graphMenu} from './contexts/MenuContext';
-import Mic from './components/Mic';
 const Form = React.lazy(() => import('./components/Form'));
 const Graph = React.lazy(() => import('./components/Graph'));
 
@@ -46,7 +45,6 @@ class App extends Component {
         <MenuContext.Provider value={{graphMenu: this.state.graphMenu, formMenu: this.state.formMenu, handleMenuChange: this.handleMenuChange}}>
           <Menu></Menu>
           <MainLayout>
-          <Mic></Mic>             
         <React.Suspense fallback="Loading...">
           {
          this.state.categories && this.state.countries && this.state.graphMenu && <Graph></Graph>

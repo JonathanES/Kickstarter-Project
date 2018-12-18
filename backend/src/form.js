@@ -44,10 +44,10 @@ function post(req,res,next){
               [
                 category,
                 state,
-                backers,
+                parseInt(backers),
                 country,
-                usd_goal_real,
-                days_before_deadline
+                parseInt(usd_goal_real),
+                parseInt(days_before_deadline)
               ]
             ]
           }

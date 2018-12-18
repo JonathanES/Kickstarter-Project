@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { ReactMic } from 'react-mic';
-const key1 = "ae3a0e0bd0d4445c93ffcc3fd4f8d3d7";
-const key2 = "f8e036097992477ab1786bcadf5e1e09";
+
  
 class Mic extends Component {
   constructor(props) {

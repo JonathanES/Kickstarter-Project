@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import DataContext from '../contexts/DataContext';
 import MenuContext from '../contexts/MenuContext';
 import '../public/main.css';
 
@@ -36,7 +35,7 @@ class Menu extends Component {
               <span></span>
               <span></span>
               <ul id="menu">
-                <a onClick={(e) => this.handleClick("form", context)} id="form" >Form</a>
+                <a onClick={(e) => this.handleClick("form", context)} id="form">Form</a>
                 <a onClick={(e) => this.handleClick("graph", context)} id="graph">Graph </a>
               </ul>
             </div>
