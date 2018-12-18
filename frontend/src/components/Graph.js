@@ -41,7 +41,7 @@ class Graph extends Component {
          <YAxis tick={{fontSize: 15}}/>
          <Tooltip/>
          <Legend />
-         <Bar dataKey="stat,total" fill="#8884d8" />
+         <Bar dataKey="stat" fill="#8884d8" />
       </BarChart>
       </ResponsiveContainer>
                    </div>
