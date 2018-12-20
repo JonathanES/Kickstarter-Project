@@ -9,7 +9,8 @@
     "react-mic": "^12.3.0",
     "react-scripts": "2.1.1",
     "recharts": "^1.4.1",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "@material-ui/core": "^3.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
