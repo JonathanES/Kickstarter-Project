@@ -11,9 +11,9 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      category: 'Apps',
-      backers: "",
-      country: 'IT',
+      category: '',
+      backers: '',
+      country: '',
       usd_goal_real: "",
       days_before_deadline: "",
       recognition: null,
@@ -29,7 +29,7 @@ class Form extends Component {
   }
 
   onSubmit = (context) => {
-    if (isNaN(this.state.backers) || isNaN(this.state.usd_goal_real) || isNaN(this.state.days_before_deadline)) {
+    if (isNaN(this.state.usd_goal_real) || isNaN(this.state.days_before_deadline)) {
       this.props.onBadInput();
     } else {
       let data = {
@@ -52,13 +52,13 @@ class Form extends Component {
         response = await response.json();
         context.onSubmit(response.data);
       }).catch(err => {
+        this.props.onBadInput();
         console.log(err);
       })
     }
   }
 
   handleClick = async (event) => {
-    this.state.recognition.start();
     switch (event.target.id) {
       case "category":
         this.setState({ category: event.target.value });

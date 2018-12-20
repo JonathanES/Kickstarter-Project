@@ -44,7 +44,7 @@ class App extends Component {
   }
 
   setGoodInput() {
-    this.setState({ badInput: false})
+    this.setState({ badInput: false })
   }
 
   setBadInput() {
@@ -59,28 +59,31 @@ class App extends Component {
           <MainLayout>
             <React.Suspense fallback="Loading...">
               {
-                this.state.categories && this.state.countries && this.state.graphMenu && 
-                <Graph />
+                this.state.categories && this.state.countries && this.state.graphMenu &&
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+
+                  <Graph />
+                </div>
               }
               {
-                this.state.categories && this.state.countries && this.state.formMenu && 
-                <div style = {{display: 'flex', justifyContent: 'center', width: '100%'}}>
-                  <Form onGoodInput={() => this.setGoodInput()} onBadInput={() => this.setBadInput()}/>
+                this.state.categories && this.state.countries && this.state.formMenu &&
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+                  <Form onGoodInput={() => this.setGoodInput()} onBadInput={() => this.setBadInput()} />
                 </div>
               }
             </React.Suspense >
-            
+
             {this.state.formMenu && !this.state.badInput && this.state.result.value !== undefined && <label htmlFor={this.state.result} style={{ color: '#17445E' }}>
               <div>
                 Accuracy : {(parseFloat(this.state.result.accuracy) * 100).toFixed(4)} %
               </div>
               <div>
-               Result : {this.state.result.value}
+                Result : {this.state.result.value}
               </div>
             </label>}
-            {this.state.badInput && this.state.formMenu && 
-            <div>
-              BAD INPUT
+            {this.state.badInput && this.state.formMenu &&
+              <div>
+                BAD INPUT
             </div>}
           </MainLayout>
         </MenuContext.Provider>
