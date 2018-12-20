@@ -1,8 +1,9 @@
 const request = require("request");
 const path = require('path')
 const arrays = require(path.join(__dirname,"../data_processing/files/arrays.js"));
-const uri = "https://ussouthcentral.services.azureml.net/workspaces/d404b57cee7b4af8a9be518cccea4e83/services/a6b779ca30654fda8d5f4c3bb489a560/execute?api-version=2.0&details=true";
-const apikey ="ZGn4JRTBwiWNc8WENmQt7p1QK6zEiFP+c1XPjFrO/H3Ty1kn6n3VvY1LaOIUas0dnQsgRahFT7KgJkPpZPoXdw==";
+const uri = "https://ussouthcentral.services.azureml.net/workspaces/d404b57cee7b4af8a9be518cccea4e83/services/9e1fb031c33044c5b180377b1ab4ca9d/execute?api-version=2.0&details=true";
+const oldApikey ="ZGn4JRTBwiWNc8WENmQt7p1QK6zEiFP+c1XPjFrO/H3Ty1kn6n3VvY1LaOIUas0dnQsgRahFT7KgJkPpZPoXdw==";
+const apikey = "nGPIPahOtGew6WSzDeEcAaFTUZx4iDrn6VYjwr+837KEhX9UIW+PLO6g2uZgevvZQthIBnjNKftO3d2GRzH0nw==";
 
 module.exports = {
     post: post,
@@ -25,7 +26,7 @@ async function getCategory(req, res, next){
 function post(req,res,next){
     const category = req.body.category ? req.body.category : "";
     const state = "";
-    const backers = req.body.backers ? req.body.backers : 0;
+    //const backers = req.body.backers ? req.body.backers : 0;
     const country = req.body.country ? req.body.country : "";
     const days_before_deadline = req.body.days_before_deadline ? req.body.days_before_deadline : 0;
     const usd_goal_real = req.body.usd_goal_real ? req.body.usd_goal_real : 0;
@@ -35,7 +36,7 @@ function post(req,res,next){
             "ColumnNames": [
               "category",
               "state",
-              "backers",
+      //        "backers",
               "country",
               "usd_goal_real",
               "days_before_deadline"
@@ -44,7 +45,7 @@ function post(req,res,next){
               [
                 category,
                 state,
-                parseInt(backers),
+        //        parseInt(backers),
                 country,
                 parseInt(usd_goal_real),
                 parseInt(days_before_deadline)
@@ -71,8 +72,8 @@ function post(req,res,next){
             res.status(200).json({
                 "message":"request successful",
                 data: {
-                    accuracy: data.Values[0][7],
-                    value: data.Values[0][6]
+                    accuracy: data.Values[0][6],
+                    value: data.Values[0][5]
                 }
             });
         } else {

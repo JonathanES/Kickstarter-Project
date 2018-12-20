@@ -58,6 +58,7 @@ class Form extends Component {
   }
 
   handleClick = async (event) => {
+    this.state.recognition.start();
     switch (event.target.id) {
       case "category":
         this.setState({ category: event.target.value });
