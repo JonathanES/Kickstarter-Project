@@ -11,9 +11,9 @@ class Form extends Component {
   constructor() {
     super();
     this.state = {
-      category: '',
+      category: 'Apps',
       backers: '',
-      country: '',
+      country: 'IT',
       usd_goal_real: "",
       days_before_deadline: "",
       recognition: null,
