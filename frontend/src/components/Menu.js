@@ -35,15 +35,15 @@ class Menu extends Component {
               <span></span>
               <span></span>
               <ul id="menu">
-                <a onClick={(e) => this.handleClick("form", context)} id="form">Form</a>
-                <a onClick={(e) => this.handleClick("graph", context)} id="graph">Graph </a>
+                <a href="/" onClick={(e) => this.handleClick("form", context)} id="form">Form</a>
+                <a href="" onClick={(e) => this.handleClick("graph", context)} id="graph">Graph </a>
               </ul>
             </div>
           </nav>
           <img id="logo" src={require("../public/Kickstarter_logo.svg.png")} alt="logo" onClick={(e) => this.handleClick("logo", e)} />
           <div className="links">
-          <a onClick={(e) => this.handleClick("form", context)} id="form" >Form</a>
-          <a onClick={(e) => this.handleClick("graph", context)} id="graph">Graph </a>
+          <a onClick={(e) => this.handleClick("form", context)} id="form" >Test your project</a>
+          <a onClick={(e) => this.handleClick("graph", context)} id="graph">Statistics </a>
           </div>
         </div>
         <div>
